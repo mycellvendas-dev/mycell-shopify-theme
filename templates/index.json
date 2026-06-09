@@ -619,74 +619,6 @@
         "mobile_padding_bottom": 50
       }
     },
-    "4eb76b08-892e-42d9-b64b-7cd97fd58f8c": {
-      "type": "logo-list",
-      "blocks": {
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-1": {
-          "type": "logo",
-          "settings": {
-            "url": ""
-          }
-        },
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-2": {
-          "type": "logo",
-          "settings": {
-            "url": ""
-          }
-        },
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-3": {
-          "type": "logo",
-          "settings": {
-            "url": ""
-          }
-        },
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-4": {
-          "type": "logo",
-          "settings": {
-            "url": ""
-          }
-        },
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-5": {
-          "type": "logo",
-          "settings": {
-            "url": ""
-          }
-        },
-        "7bdb658a-1b89-4b39-8d22-718b9ca5f8a9": {
-          "type": "logo",
-          "settings": {
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-1",
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-2",
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-3",
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-4",
-        "template--21082621673752__4eb76b08-892e-42d9-b64b-7cd97fd58f8c-logo-5",
-        "7bdb658a-1b89-4b39-8d22-718b9ca5f8a9"
-      ],
-      "disabled": true,
-      "settings": {
-        "container": "container",
-        "logo_width": 170,
-        "layout": "slider",
-        "products_show_on_xl": "6",
-        "products_show_on_sm": "2",
-        "mobile_stack": true,
-        "auto_rotate": false,
-        "change_slides_speed": 3,
-        "enable_loop": true,
-        "show_navigation": false,
-        "color_scheme_navigation": "",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "mobile_padding_top": 50,
-        "mobile_padding_bottom": 50,
-        "color_scheme": "background-2"
-      }
-    },
     "039830070213773911": {
       "type": "apps",
       "settings": {
@@ -710,7 +642,6 @@
     "best_deals_products_hMG4BE",
     "video_RkVyVq",
     "16612826014390f0b2",
-    "4eb76b08-892e-42d9-b64b-7cd97fd58f8c",
     "039830070213773911",
     "238671239986706573"
   ]
