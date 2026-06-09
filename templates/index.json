@@ -293,7 +293,7 @@
         "horizontal_sale_badge_label": "Promoção",
         "padding_top": 70,
         "padding_bottom": 0,
-        "mobile_padding_top": 50,
+        "mobile_padding_top": 10,
         "mobile_padding_bottom": 0
       }
     },
