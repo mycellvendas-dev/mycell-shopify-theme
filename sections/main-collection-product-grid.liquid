@@ -294,64 +294,64 @@
   "class": "collection-grid-section",
   "tag": "section",
   "settings": [
-    {
-      "type": "select",
-      "id": "container",
-      "label": "Largura da página",
-      "default": "container-fluid",
-      "options": [
-        {
-          "value": "container",
-          "label": "Limitado"
-        },
-        {
-          "value": "container-fluid",
-          "label": "Largura total"
-        }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "min": 8,
-      "max": 100,
-      "step": 1,
-      "default": 16,
-      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
-    },
-    {
-      "type": "select",
-      "id": "product_column",
-      "label": "Número de colunas no desktop",
-      "options": [
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "4",
-          "label": "4"
-        }
-      ],
-      "default": "3"
-    },
+      {
+        "type": "select",
+        "id": "container",
+        "label": "Page width",
+        "default": "container-fluid",
+        "options": [
+          {
+            "value": "container",
+            "label": "Boxed"
+          },
+          {
+            "value": "container-fluid",
+            "label": "Full width"
+          }
+        ]
+      },
+  	  {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 8,
+        "max": 100,
+        "step": 1,
+        "default": 16,
+        "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+      },
+      {
+        "type": "select",
+        "id": "product_column",
+        "label": "Number of columns on desktop",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          }
+        ],
+        "default": "3"
+      },
     {
       "type": "checkbox",
       "id": "product_column_on_mobile",
       "default": false,
-      "label": "Exibir uma coluna no mobile"
+      "label": "Display one column on mobile"
     },
     {
       "type": "checkbox",
       "id": "product_view_switcher",
       "default": true,
-      "label": "Ativar alternador de layout"
+      "label": "Enable layout switcher"
     },
-    {
+  	{
       "type": "header",
       "content": "t:sections.main-collection-product-grid.settings.header__1.content"
     },
@@ -376,12 +376,12 @@
         },
         {
           "value": "drawer",
-          "label": "Gaveta"
+          "label": "Drawer"
         }
       ],
       "default": "vertical",
-      "label": "Layout do filtro no desktop",
-      "info": "Gaveta e o layout padrão no mobile."
+      "label": "Desktop filter layout",
+      "info": "Drawer is the default mobile layout."
     },
     {
       "type": "checkbox",
@@ -395,236 +395,237 @@
       "options": [
         {
           "value": "input",
-          "label": "Campo de entrada"
+          "label": "Input field"
         },
         {
           "value": "range",
-          "label": "Controle deslizante"
+          "label": "Range slider"
         }
       ],
       "default": "range",
-      "label": "Layout do filtro de preço"
+      "label": "Price filter layout"
     },
     {
       "type": "color_scheme",
       "id": "facets_color_scheme",
-      "label": "Esquema de cores dos filtros",
+      "label": "Filters color scheme",
       "default": "background-2"
     },
     {
       "type": "checkbox",
       "id": "filter_box_radius",
-      "label": "Cantos arredondados do filtro vertical",
+      "label": "Vertical filter round corner",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "filter_box_spacing",
-      "label": "Espaçamento interno do filtro vertical",
+      "label": "Vertical filter inner spacing",
       "default": false
     },
+     {
+     "type": "header",
+     "content": "Product card"
+   },
     {
-      "type": "header",
-      "content": "Card de produto"
+        "type": "select",
+        "id": "card_style",
+        "label": "Card style",
+        "options": [
+          {
+            "value": "style_1",
+            "label": "Style 1"
+          },
+          {
+            "value": "style_2",
+            "label": "Style 2"
+          }
+        ],
+        "default": "style_1"
+      },
+    {
+       "type": "select",
+       "id": "image_ratio",
+       "options": [
+         {
+           "value": "adapt",
+           "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+         },
+         {
+           "value": "portrait",
+           "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+         },
+         {
+           "value": "square",
+           "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+         },
+          {
+           "value": "landscape",
+           "label": "Landscape"
+         }
+       ],
+       "default": "adapt",
+       "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_secondary_image",
+       "default": false,
+       "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+     },
+      {
+        "type": "checkbox",
+        "id": "color_swatches",
+        "default": true,
+        "label": "Enable color swatches",
+        "info": "To display color swatches, you need to enable it. [Learn more](https:\/\/themihub.gitbook.io\/suruchi-theme\/theme-settings\/color-swatches)."
+      },
+     {
+       "type": "checkbox",
+       "id": "show_badges",
+       "default": true,
+       "label": "Show badges"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_cart_button",
+       "default": true,
+       "label": "Show cart button"
+     },
+    {
+        "type": "checkbox",
+        "id": "show_preorder_button",
+        "default": true,
+        "label": "Show pre-order button",
+        "info": "You may want to allow customers to purchase out-of-stock items. [Learn more](https://themihub.gitbook.io/suruchi-theme/general-topics-faq/how-to-enable-the-pre-order-product-to-your-store)"
+      },
+     {
+       "type": "checkbox",
+       "id": "show_quick_view_button",
+       "default": true,
+       "label": "Show quick view"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_compare_view_button",
+       "default": true,
+       "label": "Show compare button"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_wishlist_button",
+       "default": true,
+       "label": "Show wishlist button"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_title",
+       "default": true,
+       "label": "Show title"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_price",
+       "default": true,
+       "label": "Show price"
+     },
+     {
+       "type": "checkbox",
+       "id": "show_vendor",
+       "default": false,
+       "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+     },
+ {
+       "type": "checkbox",
+       "id": "show_countdown",
+       "default": false,
+       "label": "Show countdown",
+       "info": "To display countdown timer, you need to enable it. [Learn more](https://themihub.gitbook.io/suruchi-theme/collections-and-products/products/add-a-countdown-timer-to-the-product)."
+   },
+
+   {
+     "type": "checkbox",
+     "id": "show_product_rating",
+     "default": false,
+     "label": "Show product rating",
+     "info": "To display product rating, you need to enable it. [Learn more](https://themihub.gitbook.io/suruchi-theme/general-topics-faq/how-to-add-product-reviews-to-your-store)."
+   },
+    {
+        "type": "checkbox",
+        "id": "inventory_status",
+        "label": "Show inventory status",
+        "default": false
     },
-    {
-      "type": "select",
-      "id": "card_style",
-      "label": "Estilo do card",
-      "options": [
-        {
-          "value": "style_1",
-          "label": "Estilo 1"
-        },
-        {
-          "value": "style_2",
-          "label": "Estilo 2"
-        }
-      ],
-      "default": "style_1"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
-        },
-        {
-          "value": "landscape",
-          "label": "Paisagem"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "color_swatches",
-      "default": true,
-      "label": "Ativar amostras de cor",
-      "info": "Para exibir amostras de cor, ative está opção. [Saiba mais](https://themihub.gitbook.io/suruchi-theme/theme-settings/color-swatches)."
-    },
-    {
-      "type": "checkbox",
-      "id": "show_badges",
-      "default": true,
-      "label": "Mostrar selos"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_cart_button",
-      "default": true,
-      "label": "Mostrar botão do carrinho"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_preorder_button",
-      "default": true,
-      "label": "Mostrar botão de pré-venda",
-      "info": "Permite que clientes comprem itens fora de estoque. [Saiba mais](https://themihub.gitbook.io/suruchi-theme/general-topics-faq/how-to-enable-the-pre-order-product-to-your-store)"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_quick_view_button",
-      "default": true,
-      "label": "Mostrar visualização rápida"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_compare_view_button",
-      "default": true,
-      "label": "Mostrar botão de comparar"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_wishlist_button",
-      "default": true,
-      "label": "Mostrar botão de favoritos"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_title",
-      "default": true,
-      "label": "Mostrar título"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_price",
-      "default": true,
-      "label": "Mostrar preço"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_countdown",
-      "default": false,
-      "label": "Mostrar contagem regressiva",
-      "info": "Para exibir contagem regressiva, ative está opção. [Saiba mais](https://themihub.gitbook.io/suruchi-theme/collections-and-products/products/add-a-countdown-timer-to-the-product)."
-    },
-    {
-      "type": "checkbox",
-      "id": "show_product_rating",
-      "default": false,
-      "label": "Mostrar avaliação do produto",
-      "info": "To display product rating, you need to enable it. [Learn more](https://themihub.gitbook.io/suruchi-theme/general-topics-faq/how-to-add-product-reviews-to-your-store)."
-    },
-    {
-      "type": "checkbox",
-      "id": "inventory_status",
-      "label": "Mostrar status do estoque",
-      "default": false
-    },
-    {
+     {
       "type": "checkbox",
       "id": "product_card_radius",
-      "label": "Cantos arredondados",
+      "label": "Round corner",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "product_card_spacing",
-      "label": "Espaçamento do card",
+      "label": "Card spacing",
       "default": false
     },
-    {
+   {
       "type": "color_scheme",
       "id": "product_card_color_scheme",
-      "label": "Esquema de cores do card de produto",
+      "label": "Product card color scheme",
       "default": "background-1"
     },
     {
       "type": "header",
-      "content": "Espaçamento da seção"
+      "content": "Section padding"
     },
     {
-      "type": "paragraph",
-      "content": "Desktop"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Espaçamento superior",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Espaçamento inferior",
-      "default": 0
-    },
-    {
-      "type": "paragraph",
-      "content": "Mobile"
-    },
-    {
-      "type": "range",
-      "id": "mobile_padding_top",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Espaçamento superior",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "mobile_padding_bottom",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Espaçamento inferior",
-      "default": 0
-    }
+          "type": "paragraph",
+          "content": "Desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "label": "Padding top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 0
+        },
+		{
+          "type": "paragraph",
+          "content": "Mobile"
+        },
+		{
+          "type": "range",
+          "id": "mobile_padding_top",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "label": "Padding top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mobile_padding_bottom",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 0
+        }
   ]
 }
 {% endschema %}
