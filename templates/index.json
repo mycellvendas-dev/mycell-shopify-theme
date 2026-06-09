@@ -37,7 +37,6 @@
         "slide_AfxPPj": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/0_bf401b5f-a0c7-4d37-ace0-10c4ee272511.png",
             "image2": "shopify://shop_images/00_59fd6baa-03c6-4cc7-bc15-00152570ba8f.png",
             "heading": "Lançamento!",
             "heading_size": "h1",
@@ -59,7 +58,6 @@
         "slide_pi36Af": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/1_1ffbc4be-0f80-413c-a693-d6689047f115.png",
             "image2": "shopify://shop_images/10.png",
             "heading": "As melhores condições",
             "heading_size": "h2",
@@ -103,7 +101,6 @@
         "535d5fb0-da91-4126-8767-efc8d3407eac": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/3_d3c32a56-329d-4fee-9ae2-e3927d4e2f1a.png",
             "image2": "shopify://shop_images/12.png",
             "heading": "Condições:",
             "heading_size": "h1",
@@ -271,6 +268,7 @@
         "product_column_laptop": "2",
         "product_column_tablet": "2",
         "product_column_mobile": "2",
+        "card_layout": "grid",
         "card_style": "style_2",
         "image_ratio": "square",
         "show_secondary_image": true,
@@ -278,7 +276,7 @@
         "show_badges": true,
         "show_cart_button": false,
         "show_preorder_button": true,
-        "show_quick_view_button": true,
+        "show_quick_view_button": false,
         "show_compare_view_button": false,
         "show_wishlist_button": true,
         "show_title": true,
@@ -290,14 +288,13 @@
         "product_card_radius": true,
         "product_card_spacing": true,
         "product_card_color_scheme": "background-2",
+        "horizontal_free_shipping_threshold": "79,90",
+        "horizontal_free_shipping_label": "Frete Grátis",
+        "horizontal_sale_badge_label": "Promoção",
         "padding_top": 70,
         "padding_bottom": 0,
         "mobile_padding_top": 50,
-        "mobile_padding_bottom": 0,
-        "card_layout": "grid",
-        "horizontal_free_shipping_threshold": "79,90",
-        "horizontal_free_shipping_label": "Frete Grátis",
-        "horizontal_sale_badge_label": "Promoção"
+        "mobile_padding_bottom": 0
       }
     },
     "c032a8c2-5620-49c4-9ceb-68e82cf4696e": {
@@ -344,43 +341,37 @@
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "acessorios",
-            "image": "shopify://shop_images/cat_acessorios_m2.png"
+            "collection": "acessorios"
           }
         },
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "instrumentos",
-            "image": "shopify://shop_images/cat_instrumentos.png"
+            "collection": "instrumentos"
           }
         },
         "f13d088a-3e0a-4f8c-8ad2-dd1602b646e9": {
           "type": "featured_collection",
           "settings": {
-            "collection": "eletronicos",
-            "image": "shopify://shop_images/cat_eletronicos.png"
+            "collection": "eletronicos"
           }
         },
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "audio",
-            "image": "shopify://shop_images/cat_audio.png"
+            "collection": "audio"
           }
         },
         "eea2dda5-ab2a-4274-ab2a-630bb6578f27": {
           "type": "featured_collection",
           "settings": {
-            "collection": "manutencao",
-            "image": "shopify://shop_images/cat_manutencao_ebe9c0d2-7f50-451c-bafe-4fb2cac2e016.png"
+            "collection": "manutencao"
           }
         },
         "featured_collection_z9cUUd": {
           "type": "featured_collection",
           "settings": {
-            "collection": "promocoeseofertas",
-            "image": "shopify://shop_images/cat_promo.png"
+            "collection": "promocoeseofertas"
           }
         }
       },
