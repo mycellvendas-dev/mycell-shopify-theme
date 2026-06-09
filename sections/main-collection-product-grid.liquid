@@ -22,7 +22,7 @@
 {{ 'stock-countdwon.css' | asset_url | stylesheet_tag }}
 {{ 'product-tooltip.css' | asset_url | stylesheet_tag }}
 
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" média="print" onload="this.média='all'">
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -40,7 +40,7 @@
     margin-top: {{ section.settings.mobile_padding_top }}px;
     margin-bottom: {{ section.settings.mobile_padding_bottom }}px;
   }
-  @média screen and (min-width: 750px) {
+  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       margin-top: {{ section.settings.padding_top }}px;
       margin-bottom: {{ section.settings.padding_bottom }}px;
@@ -238,7 +238,7 @@
             </div>
           </div>
         {%- else -%}
-          {% páginate collection.products by section.settings.products_per_page %}
+          {% paginate collection.products by section.settings.products_per_page %}
             <div
               class="template-search__results collection{% if section.settings.filter_type != 'vertical' %} {{ container }}{% endif %}"
               id="product-grid"
@@ -254,7 +254,7 @@
                     {% render 'product-card',
                       className: 'mb-20',
                       product_card_product: product,
-                      média_size: section.settings.image_ratio,
+                      media_size: section.settings.image_ratio,
                       show_secondary_image: section.settings.show_secondary_image,
                       show_vendor: section.settings.show_vendor,
                       show_badge: section.settings.show_badges,
@@ -277,11 +277,11 @@
                   </div>
                 {%- endfor -%}
               </div>
-              {%- if páginate.pages > 1 -%}
-                {% render 'págination', páginate: páginate, anchor: '' %}
+              {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
               {%- endif -%}
             </div>
-          {% endpáginate %}
+          {% endpaginate %}
         {%- endif -%}
       </div>
     </div>
