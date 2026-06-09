@@ -82,7 +82,14 @@
   line-height: 1.35;
   display: flex;
   align-items: center;
-  color: rgba(var(--color-foreground));
+  color: var(--product-card-price-color);
+}
+.product__card__price .price-item {
+  color: var(--product-card-price-color);
+}
+.product-card-list--price-cart .price .price-item,
+.product__grid--items--content .price .price-item {
+  color: var(--product-card-price-color);
 }
 .product__card__price dl,
 .product__card__price .price__sale {
@@ -113,6 +120,12 @@
   font-size: 1.25rem;
   font-weight: 500;
   opacity: 0.72;
+}
+.product__card__price .price__compare,
+.product__card__price .price__compare .price-item,
+.product-card-list--price-cart .price__compare .price-item,
+.product__grid--items--content .price__compare .price-item {
+  color: rgba(var(--color-foreground), 0.56);
 }
 .product__card__shipping-badge {
   display: inline-flex;
@@ -726,7 +739,7 @@ button.product__card__actions__btn.loading {
 
 .product__card-horizontal__price .price,
 .product__card-horizontal__price .price-item {
-  color: var(--horizontal-card-price-color);
+  color: var(--product-card-price-color);
 }
 
 .product__card-horizontal__price .price {

@@ -197,8 +197,7 @@
                           inventory_status: section.settings.inventory_status,
                           free_shipping_threshold: section.settings.horizontal_free_shipping_threshold,
                           free_shipping_label: section.settings.horizontal_free_shipping_label,
-                          sale_badge_label: section.settings.horizontal_sale_badge_label,
-                          horizontal_price_color: section.settings.horizontal_price_color
+                          sale_badge_label: section.settings.horizontal_sale_badge_label
                         %}
                       {% else %}
                         {% render 'product-card',
@@ -621,12 +620,6 @@
       "id": "horizontal_sale_badge_label",
       "label": "Sale badge label",
       "default": "Promoção"
-    },
-    {
-      "type": "color",
-      "id": "horizontal_price_color",
-      "label": "Price color",
-      "default": "#ee2761"
     },
    {
      "type": "header",

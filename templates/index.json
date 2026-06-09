@@ -288,8 +288,7 @@
         "card_layout": "grid",
         "horizontal_free_shipping_threshold": "79,90",
         "horizontal_free_shipping_label": "Frete Grátis",
-        "horizontal_sale_badge_label": "Promoção",
-        "horizontal_price_color": "#ee2761"
+        "horizontal_sale_badge_label": "Promoção"
       }
     },
     "c032a8c2-5620-49c4-9ceb-68e82cf4696e": {

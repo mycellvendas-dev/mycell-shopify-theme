@@ -21,6 +21,10 @@
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign available = target.available | default: false
+  assign on_sale = false
+  if compare_at_price > price
+    assign on_sale = true
+  endif
   assign money_price = price | money
   if settings.currency_code_enabled
     assign money_price = price | money_with_currency
@@ -36,7 +40,7 @@
     price
      {{ price_class }}
     {%- if available == false %} price--sold-out {% endif -%}
-    {%- if compare_at_price > price %} price--on-sale {% endif -%}
+    {%- if on_sale %} price--on-sale {% endif -%}
     {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
   "
 >
@@ -63,32 +67,34 @@
       </dd>
     </div>
 
-    <div class="price__sale">
-      <dt class="price__compare">
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      </dt>
-      <dd class="price__compare">
-        <s class="price-item price-item--regular">
-          {% if settings.currency_code_enabled %}
-            {{ compare_at_price | money_with_currency }}
-          {% else %}
-            {{ compare_at_price | money }}
+    {%- if on_sale -%}
+      <div class="price__sale">
+        <dt class="price__compare">
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+        </dt>
+        <dd class="price__compare">
+          <s class="price-item price-item--regular">
+            {% if settings.currency_code_enabled %}
+              {{ compare_at_price | money_with_currency }}
+            {% else %}
+              {{ compare_at_price | money }}
+            {% endif %}
+          </s>
+        </dd>
+        <dt>
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        </dt>
+        <dd
+          {% if show_badges == false %}
+            class="price__last"
           {% endif %}
-        </s>
-      </dd>
-      <dt>
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      </dt>
-      <dd
-        {% if show_badges == false %}
-          class="price__last"
-        {% endif %}
-      >
-        <span class="price-item price-item--sale">
-          {{ money_price }}
-        </span>
-      </dd>
-    </div>
+        >
+          <span class="price-item price-item--sale">
+            {{ money_price }}
+          </span>
+        </dd>
+      </div>
+    {%- endif -%}
 
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <dt class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</dt>

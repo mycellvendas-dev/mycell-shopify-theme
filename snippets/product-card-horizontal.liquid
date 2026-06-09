@@ -3,7 +3,6 @@
   assign current_total_stock = 0
   assign free_shipping_threshold_value = free_shipping_threshold | default: '79.90' | replace: ',', '.'
   assign free_shipping_threshold_cents = free_shipping_threshold_value | times: 100
-  assign horizontal_price_color = horizontal_price_color | default: '#ee2761'
   assign free_shipping_label = free_shipping_label | default: 'Frete Grátis'
   assign sale_badge_label = sale_badge_label | default: 'Promoção'
 
@@ -90,7 +89,7 @@
     {%- endif -%}
 
     {%- if show_price -%}
-      <div class="product__card-horizontal__price" style="--horizontal-card-price-color: {{ horizontal_price_color }};">
+      <div class="product__card-horizontal__price">
         {% render 'price', product: product_card_product, price_class: 'product__card-horizontal__price-value' %}
       </div>
     {%- endif -%}
