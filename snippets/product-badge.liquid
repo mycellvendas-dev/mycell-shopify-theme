@@ -2,7 +2,7 @@
   assign nweBadgeDate = product.metafields.meta.product_new_badge.value | date: '%s'
   assign today_date = 'now' | date: '%s'
 
-  assign sale_text = 'products.product.on_sale' | t
+  assign sale_text = settings.product_card_sale_label | default: 'Oferta'
 -%}
 
 <span class="product__card__badges">
@@ -27,15 +27,18 @@
   {%- elsif product.compare_at_price > product.price and product.available -%}
     {% liquid
       assign percentage_badge = false
-      if settings.sale_percentage_show and product.selected_or_first_available_variant.compare_at_price != null
+      if product.selected_or_first_available_variant.compare_at_price != null
         assign percentage_badge = true
       endif
     %}
     {%- if percentage_badge or sale_text != blank -%}
-      <span class="badge product__card__badge--sale color-{{ settings.sale_badge_color_scheme }}" aria-hidden="true">
+      <span class="badge product__card__badge--sale" aria-hidden="true">
+        {% if sale_text != blank %}
+          <span class="sale__text">{{ sale_text }}</span>
+        {% endif %}
         {% if percentage_badge %}
           <span class="sale__save--percent"
-            >-
+            >
             {{-
               product.selected_or_first_available_variant.compare_at_price
               | minus: product.selected_or_first_available_variant.price
@@ -46,9 +49,6 @@
             -}}
             %
           </span>
-        {% endif %}
-        {% if sale_text != blank %}
-          <span class="sale__text">{{ sale_text }}</span>
         {% endif %}
       </span>
     {%- endif -%}

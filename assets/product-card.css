@@ -25,8 +25,26 @@
   position: absolute;
   left: 0;
   bottom: 0;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 2.4rem;
+  padding: 0.2rem 0.7rem;
   border-radius: 0 0.4rem 0 0;
-  min-height: 2.6rem;
+  color: var(--product-card-sale-badge-color);
+  background: var(--product-card-sale-badge-background);
+  border: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: left;
+  white-space: nowrap;
+  word-break: normal;
+}
+.product__card__badge--sale .sale__text,
+.product__card__badge--sale .sale__save--percent {
+  display: inline;
+  color: inherit;
 }
 @media only screen and (max-width: 575px) {
   .product__card__badges > .badge:not(.product__card__badge--sale) {
@@ -70,6 +88,9 @@
   .product__card__title {
     font-size: 1.35rem;
   }
+  .product__card__title a {
+    min-height: 3.55rem;
+  }
 }
 @media only screen and (max-width: 479px) {
   .product__card__title {
@@ -94,9 +115,9 @@
 .product__card__price dl,
 .product__card__price .price__sale {
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 0.6rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
 }
 .product__card__price dt {
   display: none;
@@ -105,15 +126,14 @@
   margin: 0;
 }
 .product__card__price .price__sale {
-  flex-wrap: nowrap;
   width: 100%;
 }
-.product__card__price .price__sale dd:last-child {
+.product__card__price .price__sale .price__sale-current {
   order: 1;
 }
 .product__card__price .price__sale dd.price__compare {
   order: 2;
-  margin-left: auto;
+  margin-left: 0;
 }
 .product__card__price .price__compare {
   text-decoration: line-through;
@@ -134,8 +154,8 @@
   min-height: 2.4rem;
   padding: 0.2rem 0.8rem;
   border-radius: 0.4rem;
-  color: #0f6f3f;
-  background: #e8f7ef;
+  color: var(--product-card-free-shipping-color);
+  background: var(--product-card-free-shipping-background);
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
@@ -688,13 +708,13 @@ button.product__card__actions__btn.loading {
 }
 
 .product__card-horizontal__pill--shipping {
-  color: #0f6f3f;
-  background: #e8f7ef;
+  color: var(--product-card-free-shipping-color);
+  background: var(--product-card-free-shipping-background);
 }
 
 .product__card-horizontal__pill--sale {
-  color: #9a1f1f;
-  background: #ffe8e8;
+  color: var(--product-card-sale-badge-color);
+  background: var(--product-card-sale-badge-background);
 }
 
 .product__card-horizontal__title {

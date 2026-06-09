@@ -19,7 +19,8 @@
 
 {%- liquid
   assign variant = product_card_product.selected_or_first_available_variant
-  assign free_shipping_threshold_cents = 7990
+  assign free_shipping_threshold_value = settings.product_card_free_shipping_threshold | default: '79,90' | replace: ',', '.'
+  assign free_shipping_threshold_cents = free_shipping_threshold_value | times: 100
 
   assign productCountdown = product_card_product.metafields.metaname.countdown_timer.value
   assign todayDate = 'now' | date: '%s'
@@ -182,14 +183,14 @@
       </h3>
     {%- endif -%}
 
-    {%- if show_price -%}
-      {% render 'price', product: product_card_product, price_class: price_class %}
-    {%- endif -%}
-
     {%- if product_card_product.price >= free_shipping_threshold_cents -%}
       <div class="product__card__shipping-badge">
-        Frete Grátis
+        {{ settings.product_card_free_shipping_label | default: 'Frete Grátis' }}
       </div>
+    {%- endif -%}
+
+    {%- if show_price -%}
+      {% render 'price', product: product_card_product, price_class: price_class %}
     {%- endif -%}
 
     {% if inventory_status %}

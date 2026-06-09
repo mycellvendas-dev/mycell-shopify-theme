@@ -194,10 +194,7 @@
                           show_price: section.settings.show_price,
                           color_scheme: section.settings.product_card_color_scheme,
                           corner_radius: section.settings.product_card_radius,
-                          inventory_status: section.settings.inventory_status,
-                          free_shipping_threshold: section.settings.horizontal_free_shipping_threshold,
-                          free_shipping_label: section.settings.horizontal_free_shipping_label,
-                          sale_badge_label: section.settings.horizontal_sale_badge_label
+                          inventory_status: section.settings.inventory_status
                         %}
                       {% else %}
                         {% render 'product-card',
@@ -600,28 +597,6 @@
       "default": "background-1"
     },
     {
-      "type": "header",
-      "content": "Horizontal card"
-    },
-    {
-      "type": "text",
-      "id": "horizontal_free_shipping_threshold",
-      "label": "Free shipping minimum price",
-      "default": "79,90"
-    },
-    {
-      "type": "text",
-      "id": "horizontal_free_shipping_label",
-      "label": "Free shipping label",
-      "default": "Frete Grátis"
-    },
-    {
-      "type": "text",
-      "id": "horizontal_sale_badge_label",
-      "label": "Sale badge label",
-      "default": "Promoção"
-    },
-   {
      "type": "header",
      "content": "Section padding"
    },

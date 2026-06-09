@@ -585,6 +585,52 @@
       },
       {
         "type": "header",
+        "content": "Product card badges"
+      },
+      {
+        "type": "text",
+        "id": "product_card_free_shipping_threshold",
+        "label": "Free shipping minimum price",
+        "default": "79,90"
+      },
+      {
+        "type": "text",
+        "id": "product_card_free_shipping_label",
+        "label": "Free shipping label",
+        "default": "Frete Grátis"
+      },
+      {
+        "type": "color",
+        "id": "product_card_free_shipping_text_color",
+        "label": "Free shipping text color",
+        "default": "#0f6f3f"
+      },
+      {
+        "type": "color",
+        "id": "product_card_free_shipping_background",
+        "label": "Free shipping background color",
+        "default": "#e8f7ef"
+      },
+      {
+        "type": "text",
+        "id": "product_card_sale_label",
+        "label": "Sale badge text",
+        "default": "Oferta"
+      },
+      {
+        "type": "color",
+        "id": "product_card_sale_text_color",
+        "label": "Sale badge text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "product_card_sale_background",
+        "label": "Sale badge background color",
+        "default": "#008060"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.styles.settings.header__1.content"
       },
       {

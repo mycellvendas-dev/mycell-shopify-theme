@@ -86,7 +86,9 @@
         </dt>
         <dd
           {% if show_badges == false %}
-            class="price__last"
+            class="price__last price__sale-current"
+          {% else %}
+            class="price__sale-current"
           {% endif %}
         >
           <span class="price-item price-item--sale">
