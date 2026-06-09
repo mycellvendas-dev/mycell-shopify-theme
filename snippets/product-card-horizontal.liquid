@@ -1,0 +1,109 @@
+{%- liquid
+  assign variant = product_card_product.selected_or_first_available_variant
+  assign current_total_stock = 0
+  assign free_shipping_threshold_value = free_shipping_threshold | default: '79.90' | replace: ',', '.'
+  assign free_shipping_threshold_cents = free_shipping_threshold_value | times: 100
+  assign horizontal_price_color = horizontal_price_color | default: '#ee2761'
+  assign free_shipping_label = free_shipping_label | default: 'Frete Grátis'
+  assign sale_badge_label = sale_badge_label | default: 'Promoção'
+
+  for variant_item in product_card_product.variants
+    assign current_total_stock = current_total_stock | plus: variant_item.inventory_quantity
+  endfor
+
+  assign first_variant_featured_media_check = false
+  if variant.featured_media == null
+    assign first_variant_featured_media_check = true
+  endif
+
+  assign featured_media_aspect_ratio = product_card_product.featured_media.aspect_ratio
+  if product_card_product.featured_media.aspect_ratio == null
+    assign featured_media_aspect_ratio = 1
+  endif
+
+  assign product_is_on_sale = false
+  if product_card_product.compare_at_price > product_card_product.price and product_card_product.available
+    assign product_is_on_sale = true
+  endif
+-%}
+
+<article class="product__card-horizontal {% if corner_radius %}product--corner-radius-true{% endif %} color-{{ color_scheme }}">
+  <a href="{{ product_card_product.url | default: '#' }}" class="product__card-horizontal__media product__card--link">
+    {%- if product_card_product.featured_media -%}
+      {%- render 'product-card-media',
+        product_card_product: product_card_product,
+        variant: variant,
+        media_size: 'square',
+        featured_media_aspect_ratio: featured_media_aspect_ratio,
+        second_img_position: 1,
+        show_secondary_image: false,
+        first_variant_featured_media_check: first_variant_featured_media_check
+      -%}
+    {%- else -%}
+      <div class="placeholder placeholder_svg_parent" style="padding-bottom: 100%">
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg-2' }}
+      </div>
+    {%- endif -%}
+  </a>
+
+  <div class="product__card-horizontal__content">
+    <div class="product__card-horizontal__badges">
+      {%- if product_card_product.price >= free_shipping_threshold_cents -%}
+        <span class="product__card-horizontal__pill product__card-horizontal__pill--shipping">
+          {{ free_shipping_label }}
+        </span>
+      {%- endif -%}
+
+      {%- if product_is_on_sale -%}
+        <span class="product__card-horizontal__pill product__card-horizontal__pill--sale">
+          {{ sale_badge_label }}
+        </span>
+      {%- endif -%}
+    </div>
+
+    {%- if show_title -%}
+      <h3 class="product__card-horizontal__title">
+        <a href="{{ product_card_product.url | default: '#' }}">
+          {{- product_card_product.title -}}
+        </a>
+      </h3>
+    {%- endif -%}
+
+    {%- if inventory_status -%}
+      <div class="product__card-horizontal__stock">
+        {%- if current_total_stock > 0 -%}
+          <span class="product__card-horizontal__stock-dot"></span>
+          {{ current_total_stock }}
+          {%- if current_total_stock > 1 -%}
+            unidades em estoque
+          {%- else -%}
+            unidade em estoque
+          {%- endif -%}
+        {%- elsif product_card_product.available -%}
+          <span class="product__card-horizontal__stock-dot"></span>
+          Disponivel
+        {%- else -%}
+          <span class="product__card-horizontal__stock-dot product__card-horizontal__stock-dot--warning"></span>
+          Fora de estoque
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if show_price -%}
+      <div class="product__card-horizontal__price" style="--horizontal-card-price-color: {{ horizontal_price_color }};">
+        {% render 'price', product: product_card_product, price_class: 'product__card-horizontal__price-value' %}
+      </div>
+    {%- endif -%}
+
+    {%- if show_cart_button -%}
+      <div class="product__card-horizontal__actions">
+        {% render 'add-to-cart-form',
+          product_card_product: product_card_product,
+          variant: variant,
+          tooltip: false,
+          show_preorder_button: show_preorder_button
+        %}
+      </div>
+    {%- endif -%}
+  </div>
+</article>
