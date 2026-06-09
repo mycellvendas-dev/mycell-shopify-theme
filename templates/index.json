@@ -269,7 +269,7 @@
         "text_center": "center",
         "border_line": true,
         "product_column": "5",
-        "product_column_laptop": "2",
+        "product_column_laptop": "4",
         "product_column_tablet": "2",
         "product_column_mobile": "2",
         "card_layout": "grid",
